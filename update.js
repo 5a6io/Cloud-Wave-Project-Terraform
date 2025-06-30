@@ -1,4 +1,4 @@
-import { writeFileSync, readdirSync, readFileSync } from 'node:fs';
+import { writeFileSync, readdirSync, readFileSync, statSync } from 'node:fs';
 import { join } from 'node:path';
 
 let text = `# 🍀Cloud Wave Group Project - Olive Safety
@@ -17,7 +17,13 @@ I wrote the code by service.
 
 (async () => {
     try {
-        const tfFiles = readdirSync('./').filter(file => file.endsWith('.tf'));
+        const tfFiles = readdirSync('./')
+            .filter(file => file.endsWith('.tf'))
+            .map(file => ({
+                file,
+                mtime: statSync(join('./', file)).mtime
+            }))
+            .sort((a, b) => a.mtime - b.mtime);
 
         for (const file of tfFiles) {
             const content = readFileSync(join('./', file), 'utf-8');
