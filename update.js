@@ -15,15 +15,18 @@ I wrote the code by service.
 
 `;
 
+const priorityFiles = ['main.tf', 'network.tf'];
+
 (async () => {
     try {
-        const tfFiles = readdirSync('./')
-            .filter(file => file.endsWith('.tf'))
-            .map(file => ({
-                file,
-                mtime: statSync(join('./', file)).mtime
-            }))
-            .sort((a, b) => a.mtime - b.mtime);
+        const allTfFiles = readdirSync('./')
+            .filter(file => file.endsWith('.tf'));
+
+        const tfFiles = [...priorityFiles.filter(file => allTfFiles.includes(file)),
+            ...allTfFiles
+                .filter(file => !priorityFiles.includes(file))
+                .sort()
+        ];
 
         for (const file of tfFiles) {
             const content = readFileSync(join('./', file), 'utf-8');
