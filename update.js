@@ -25,8 +25,9 @@ I wrote the code by service.
         }
 
         writeFileSync('README.md', text);
+        console.log(`${text}`);
         console.log('README.md updated');
     } catch(error){
         console.error("다음과 같은 오류 발생:", error);
     }
-})
+})();
