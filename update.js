@@ -1,6 +1,5 @@
-import { error } from 'node:console';
 import { writeFileSync, readdirSync, readFileSync } from 'node:fs';
-import {join } from 'node:path';
+import { join } from 'node:path';
 
 let text = `# 🍀Cloud Wave Group Project - Olive Safety
 

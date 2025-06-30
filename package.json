@@ -1,10 +1,10 @@
 {
   "name": "Cloud-Wave-Project-IaC",
   "version": "1.0.0",
-  "main": "update_readme.js",
+  "main": "update.js",
   "type": "module",
   "scripts": {
-    "start": "node update_readme.js",
+    "start": "node update.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   }
 }
