@@ -9,13 +9,13 @@ Group Project: https://github.com/5a6io/OliveSafety.git
 
 I haven't original code. So, it may be different from that.
 
-I wrote the code by service.
+It was written separately by service.
 
 ## 🌟Terraform Code
 
 `;
 
-const priorityFiles = ['main.tf', 'network.tf'];
+const priorityFiles = ['main.tf', 'vpc.tf'];
 
 (async () => {
     try {
