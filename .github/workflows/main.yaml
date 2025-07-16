@@ -13,9 +13,17 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 22
+
+      - name: Install dependency
+        run: npm ci
+        
+      - name: Install tree
+        run: sudo apt-get update && sudo apt-get install tree -y
       
       - name: Update README.md
-        run: node update.js
+        run: |
+          export TREE_OUTPUT="$(tree -L 3 --noreport -I '.github|package.json|README.md|update.js' )"
+          node update.js
       
       - name: Check if there are any changes
         id: verify_diff
