@@ -11,9 +11,9 @@ Group Project: https://github.com/5a6io/OliveSafety.git
 
 I haven't original code. So, it may be different from that.
 
-It was written separately by service.
+It was written separately by modules and environments.
 
-## 🌟Directory Structure
+## 🗂️Directory Structure
 
 `;
 
@@ -28,7 +28,7 @@ if (!tree) {
     try {
 
         text += `\`\`\`bash\n${tree}\n\`\`\`\n`
-        
+
         writeFileSync('README.md', text);
         console.log(`${text}`);
         console.log('README.md updated');
