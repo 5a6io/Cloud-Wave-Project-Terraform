@@ -12,34 +12,33 @@ It was written separately by service.
 
 ```bash
 .
+├── env
+│   ├── dr-tokyo
+│   │   ├── backend.tf
+│   │   ├── main.tf
+│   │   └── variables.tf
+│   └── prod-seoul
+│       ├── backend.tf
+│       ├── main.tf
+│       └── variables.tf
 ├── global
 │   ├── providers.tf
 │   └── remote_state.tf
-├── modules
-│   ├── database
-│   │   ├── main.tf
-│   │   ├── outputs.tf
-│   │   └── variables.tf
-│   ├── ec2
-│   │   ├── main.tf
-│   │   ├── outputs.tf
-│   │   └── variables.tf
-│   ├── eks
-│   │   ├── main.tf
-│   │   ├── outputs.tf
-│   │   └── variables.tf
-│   └── network
-│       ├── main.tf
-│       ├── outputs.tf
-│       └── variables.tf
-├── node_modules
-│   └── dotenv
-│       ├── CHANGELOG.md
-│       ├── LICENSE
-│       ├── README-es.md
-│       ├── SECURITY.md
-│       ├── config.d.ts
-│       ├── config.js
-│       └── lib
-└── package-lock.json
+└── modules
+    ├── database
+    │   ├── main.tf
+    │   ├── outputs.tf
+    │   └── variables.tf
+    ├── ec2
+    │   ├── main.tf
+    │   ├── outputs.tf
+    │   └── variables.tf
+    ├── eks
+    │   ├── main.tf
+    │   ├── outputs.tf
+    │   └── variables.tf
+    └── network
+        ├── main.tf
+        ├── outputs.tf
+        └── variables.tf
 ```
