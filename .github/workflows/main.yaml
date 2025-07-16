@@ -22,7 +22,7 @@ jobs:
       
       - name: Update README.md
         run: |
-          export TREE_OUTPUT="$(tree -L 3 --noreport -I '.github|package.json|README.md|update.js' )"
+          export TREE_OUTPUT="$(tree -L 3 --noreport -I '.github|package*|README.md|update.js|node_modules' )"
           node update.js
       
       - name: Check if there are any changes
