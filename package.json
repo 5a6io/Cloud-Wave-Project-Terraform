@@ -1,5 +1,5 @@
 {
-  "name": "Cloud-Wave-Project-IaC",
+  "name": "Cloud-Wave-Project-Terraform",
   "version": "1.0.0",
   "main": "update.js",
   "type": "module",
