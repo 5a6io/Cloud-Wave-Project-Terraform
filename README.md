@@ -47,19 +47,23 @@ Currently, It's still in the process of writing.
 │   ├── monitoring
 │   │   └── cloudwatch
 │   ├── network
-│   │   ├── main.tf
-│   │   ├── outputs.tf
-│   │   └── variables.tf
-│   └── security
-│       ├── config
-│       ├── detective
-│       ├── guardduty
-│       ├── iam
-│       ├── inspector
-│       ├── kms
-│       ├── security-group
-│       ├── security-hub
-│       └── waf
+│   │   ├── igw-nat
+│   │   ├── subnets
+│   │   └── vpc
+│   ├── security
+│   │   ├── config
+│   │   ├── detective
+│   │   ├── guardduty
+│   │   ├── iam
+│   │   ├── inspector
+│   │   ├── kms
+│   │   ├── security-group
+│   │   ├── security-hub
+│   │   └── waf
+│   └── web
+│       ├── main.tf
+│       ├── outputs.tf
+│       └── variables.tf
 └── stacks
     ├── 00_providers.tf
     ├── 01_security.tf
@@ -68,5 +72,6 @@ Currently, It's still in the process of writing.
     ├── 04_data.tf
     ├── 05_messaging.tf
     ├── 06_edge.tf
-    └── 07_monitoring.tf
+    ├── 07_monitoring.tf
+    └── variables.tf
 ```
