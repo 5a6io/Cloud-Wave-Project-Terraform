@@ -1,32 +1,34 @@
+# VPC
 resource "aws_vpc" "olivesafety-vpc-ap-01" {
-    cidr_block = "10.0.1.0/24"
+    cidr_block =  var.vpc_cidr #"10.0.1.0/24"
     enable_dns_support = true
     enable_dns_hostnames = false
     instance_tenancy = "default"
 }
 
+# Subnet
 resource "aws_subnet" "olivesafety-sub-pub-01" {
     availability_zone = "ap-northeast-2a"
-    cidr_block = "10.0.1.0/27"
+    cidr_block = var.pub_subnet_cidr #"10.0.1.0/27"
     vpc_id = "${aws_vpc.olivesafety_vpc.id}"
     map_public_ip_on_launch = true
 }
 
 resource "aws_subnet" "olivesafety-sub-pub-02" {
     availability_zone = "ap-northeast-2c"
-    cidr_block = "10.0.1.32/27"
+    cidr_block = var.pub_subnet_cidr #"10.0.1.32/27"
     vpc_id = "${aws_vpc.olivesafety_vpc.id}"
 }
 
 resource "aws_subnet" "olivesafety-sub-pri-01" {
     availability_zone = "ap-northeast-2a"
-    cidr_block = "10.0.1.64/27"
+    cidr_block = var.pri_subnet_cidr #"10.0.1.64/27"
     vpc_id = "${aws_vpc.olivesafety_vpc.id}"
 }
 
 resource "aws_subnet" "olivesafety-sub-pri-02" {
     availability_zone = "ap-northeast-2b"
-    cidr_block = "10.0.1.96/27"
+    cidr_block = var.pri_subent_cidr #"10.0.1.96/27"
     vpc_id = "${aws_vpc.olivesafety_vpc.id}"
 }
 
@@ -42,6 +44,7 @@ resource "aws_subnet" "olivesafety-sub-pri-04" {
     vpc_id = "${aws_vpc.olivesafety_vpc.id}"
 }
 
+# Internet Gateway
 resource "aws_internet_gateway" "olivesafety-eks-igw" {
     vpc_id = aws_vpc.olivesafety-vpc-ap-01.id
 }
@@ -51,6 +54,7 @@ resource "aws_internet_gateway_attachment" "olivesafety-eks-igw-attachment" {
     vpc_id = aws_vpc.olivesafety-vpc-ap-01.id
 }
 
+# Route Table
 resource "aws_route_table" "olivesafety-rtb-pub-01" {
     vpc_id = "${aws_vpc.olivesafety-vpc-ap-01.id}"
 
@@ -70,6 +74,7 @@ resource "aws_route_table_association" "olivesafety-rtb-pub-01-association" {
     subnet_id = aws_subnet.olivesafety-sub-pub-01.id
 }
 
+# NAT
 resource "aws_nat_gateway" "olivesafety-eks-nat-01" {
     subnet_id = aws_subnet.olivesafety-sub-pub-01.id
     allocation_id = ""

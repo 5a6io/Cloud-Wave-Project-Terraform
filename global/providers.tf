@@ -11,25 +11,25 @@ terraform {
 
 /** Default Provider **/
 provider "aws" {
-    region = "ap-northeast-2"
+    region = var.default_region #"ap-northeast-2"
     alias = "seoul"
 }
 
 /** Alternate Provider **/
 provider "aws" {
-    region = "ap-northeast-1"
+    region = var.alterante_region #"ap-northeast-1"
     alias = "tokyo" 
 }
 
 module "default_provider" {
-    source = "./default"
+    source = "../env/prod-seoul"
     providers = {
       aws = aws.seoul
     }
 }
 
 module "alternate_provider" {
-    source = "./alternate"
+    source = "../env/dr-tokyo"
     providers = {
       aws = aws.tokyo
     }

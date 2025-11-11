@@ -1,19 +1,3 @@
-resource "aws_security_group" "external_alb_sg" {
-    name = "external alb sg"
-}
-
-resource "aws_security_group" "web_sg" {
-    name = "web sg"
-}
-
-resource "aws_security_group" "internal_alb_sg" {
-    name = "internal alb sg"
-}
-
-resource "aws_security_group" "was_sg" {
-    name = "was sg"
-}
-
 resource "aws_eks_cluster" "olivesafety_cluster" {
     name = "olivesafety"
 
