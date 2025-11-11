@@ -29,11 +29,20 @@ Currently, It's still in the process of writing.
 ├── modules
 │   ├── compute
 │   │   ├── ec2
-│   │   └── eks-cluster
+│   │   ├── eks-cluster
+│   │   ├── eks-node-group
+│   │   └── lambda
 │   ├── data
 │   │   ├── elasticache
-│   │   └── rds
+│   │   ├── rds
+│   │   └── s3
+│   ├── edge
+│   │   ├── cloudfront
+│   │   ├── loadbalancer
+│   │   └── route53
 │   ├── messaging
+│   │   ├── eventbridge
+│   │   ├── sns
 │   │   └── sqs
 │   ├── monitoring
 │   │   └── cloudwatch
@@ -42,8 +51,15 @@ Currently, It's still in the process of writing.
 │   │   ├── outputs.tf
 │   │   └── variables.tf
 │   └── security
+│       ├── config
+│       ├── detective
+│       ├── guardduty
 │       ├── iam
-│       └── security-group
+│       ├── inspector
+│       ├── kms
+│       ├── security-group
+│       ├── security-hub
+│       └── waf
 └── stacks
     ├── 00_providers.tf
     ├── 01_security.tf
