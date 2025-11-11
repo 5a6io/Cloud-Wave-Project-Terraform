@@ -26,21 +26,31 @@ Currently, It's still in the process of writing.
 ├── global
 │   ├── providers.tf
 │   └── remote_state.tf
-└── modules
-    ├── database
-    │   ├── main.tf
-    │   ├── outputs.tf
-    │   └── variables.tf
-    ├── ec2
-    │   ├── main.tf
-    │   ├── outputs.tf
-    │   └── variables.tf
-    ├── eks
-    │   ├── main.tf
-    │   ├── outputs.tf
-    │   └── variables.tf
-    └── network
-        ├── main.tf
-        ├── outputs.tf
-        └── variables.tf
+├── modules
+│   ├── compute
+│   │   ├── ec2
+│   │   └── eks-cluster
+│   ├── data
+│   │   ├── elasticache
+│   │   └── rds
+│   ├── messaging
+│   │   └── sqs
+│   ├── monitoring
+│   │   └── cloudwatch
+│   ├── network
+│   │   ├── main.tf
+│   │   ├── outputs.tf
+│   │   └── variables.tf
+│   └── security
+│       ├── iam
+│       └── security-group
+└── stacks
+    ├── 00_providers.tf
+    ├── 01_security.tf
+    ├── 02_network.tf
+    ├── 03_compute.tf
+    ├── 04_data.tf
+    ├── 05_messaging.tf
+    ├── 06_edge.tf
+    └── 07_monitoring.tf
 ```
