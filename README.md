@@ -65,13 +65,13 @@ Currently, It's still in the process of writing.
 │       ├── outputs.tf
 │       └── variables.tf
 └── stacks
-    ├── 00_providers.tf
-    ├── 01_security.tf
-    ├── 02_network.tf
-    ├── 03_compute.tf
-    ├── 04_data.tf
-    ├── 05_messaging.tf
-    ├── 06_edge.tf
-    ├── 07_monitoring.tf
+    ├── 00-providers.tf
+    ├── 01-network.tf
+    ├── 02-security.tf
+    ├── 03-compute.tf
+    ├── 04-data.tf
+    ├── 05-messaging.tf
+    ├── 06-edge.tf
+    ├── 07-monitoring.tf
     └── variables.tf
 ```
