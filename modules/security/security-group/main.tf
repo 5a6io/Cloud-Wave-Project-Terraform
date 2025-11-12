@@ -47,9 +47,7 @@ resource "aws_security_group" "sg_rds" {
 }
 
 resource "aws_vpc_security_group_ingress_rule" "rds_ingress" {
-    count = length(var.cidr)
     security_group_id = aws_security_group.sg_rds.id
-    cidr_ipv4 = var.cidr[count.index]
     from_port = 3306
     ip_protocol = "tcp"
     to_port = 3306

@@ -10,7 +10,3 @@ variable "common_tags" {
 variable "vpc_id" {
   type = string
 }
-
-variable "cidr" {
-  type = list(string)
-}
