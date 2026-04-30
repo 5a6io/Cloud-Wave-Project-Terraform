@@ -1,0 +1,4 @@
+# terraform init -backend-config=backend.hcl
+bucket         = "your-tfstate-bucket"
+region         = "ap-northeast-2"
+dynamodb_table = "your-tf-lock-table"
