@@ -16,12 +16,16 @@ Currently, It's still in the process of writing.
 .
 ├── env
 │   ├── dr-tokyo
+│   │   ├── backend.hcl.example
 │   │   ├── backend.tf
 │   │   ├── main.tf
+│   │   ├── terraform.tfvars.example
 │   │   └── variables.tf
 │   └── prod-seoul
+│       ├── backend.hcl.example
 │       ├── backend.tf
 │       ├── main.tf
+│       ├── terraform.tfvars.example
 │       └── variables.tf
 ├── global
 │   ├── providers.tf
@@ -73,5 +77,9 @@ Currently, It's still in the process of writing.
     ├── 05-messaging.tf
     ├── 06-edge.tf
     ├── 07-monitoring.tf
+    ├── 08-dr-tokyo.tf
+    ├── 09-dr-route53-failover.tf
+    ├── 99-outputs.tf
+    ├── terraform.tfvars.example
     └── variables.tf
 ```
